@@ -25,7 +25,7 @@ public class GithubServiceTest {
 
     @Test
     public void testGetRepositories_Success() {
-        // Mock repository response
+
         RepositoryInfo repo = new RepositoryInfo();
         repo.setName("test-repo");
         repo.setFork(false);
@@ -35,11 +35,11 @@ public class GithubServiceTest {
         branch.setName("main");
         branch.setLastCommitSha("abc123");
 
-        // Mock branch response
+        
         Mockito.when(restTemplate.getForEntity(eq("https://api.github.com/repos/test-user/test-repo/branches"), eq(BranchInfo[].class)))
                 .thenReturn(ResponseEntity.ok(new BranchInfo[]{branch}));
 
-        // Mock commit response
+        
         Map<String, Object> commit = new HashMap<>();
         commit.put("sha", "abc123");
 
