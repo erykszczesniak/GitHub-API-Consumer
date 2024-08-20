@@ -112,6 +112,10 @@ curl -H "Accept: application/json" http://localhost:8081/api/github/repositories
 ]
 ```
 
+
+https://github.com/user-attachments/assets/1ceded8d-2ad7-4562-9e4c-e565b30865a3
+
+
 ### Error Handling
 If the user does not exist, the API will return a 404 response:
 
@@ -121,6 +125,12 @@ If the user does not exist, the API will return a 404 response:
   "message": "User {username} not found"
 }
 ```
+
+
+
+https://github.com/user-attachments/assets/fb52ed23-888b-4f9e-9c6f-37af95c876e8
+
+
 
 ## Testing
 Unit tests and integration tests are provided to validate the application. You can run the tests using:
