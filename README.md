@@ -58,14 +58,13 @@ public class AppConfig {
     @Bean
     public RestTemplate restTemplate() {
         RestTemplate restTemplate = new RestTemplate();
-        
-        // Add an interceptor to include the Authorization header with the token
+
         ClientHttpRequestInterceptor authInterceptor = (request, body, execution) -> {
             HttpHeaders headers = request.getHeaders();
             headers.add("Authorization", "Bearer " + GITHUB_TOKEN);
             return execution.execute(request, body);
         };
-        
+
         restTemplate.setInterceptors(Collections.singletonList(authInterceptor));
         return restTemplate;
     }
@@ -82,7 +81,7 @@ public class AppConfig {
 ./mvnw spring-boot:run
 ```
 
-The application will start on [http://localhost:8081](http://localhost:8081).
+The application will start on port 8081
 
 ## API Endpoints
 
